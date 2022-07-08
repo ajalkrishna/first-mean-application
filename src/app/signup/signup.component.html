@@ -1,0 +1,56 @@
+<div class="signupPage">
+
+    <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto form-section">
+            <h3 class="display-5 text-white">Register Now!</h3>
+            <hr>
+            <form [formGroup]='userSignupForm' (ngSubmit)='onSubmit(template)' class="m-2" #formref='ngForm'>
+                <!-- username -->
+                <div class="mb-3">
+                    <label for="uname" class="form-label">Username</label>
+                    <input type="text" formControlName='username' name="uname" id="uname" class="form-control">
+                    <!-- username validation -->
+                    <!-- <div ngIf='formref.submitted'>
+                        <p>Username is mandarory</p>
+                    </div> -->
+                    <!-- user registration error messages -->
+                    <p class="fw-bold text-center text-white" *ngIf="registrationError.error">
+                        {{registrationError.errorMessage}}
+                    </p>
+                </div>
+                <!-- password -->
+                <div class="mb-3">
+                    <label for="pw" class="form-label">Password</label>
+                    <input type="text" formControlName='password' name="pw" id="pw" class="form-control">
+                </div>
+                <!-- email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">e-mail</label>
+                    <input type="email" formControlName='email' name="email" id="email" class="form-control">
+                </div>
+                <!-- city -->
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" formControlName='city' name="city" id="city" class="form-control">
+                </div>
+                <!-- profile pic -->
+                <div class="mb-3">
+                    <label for="photo" class="form-label">City</label>
+                    <input type="file" formControlName='photo' name="photo" id="photo" class="form-control" (input)="fileSelected(photoFile.files[0])" #photoFile>
+                </div>
+                <!-- submit button -->
+                <button type="submit" class="btn d-block mx-auto w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- modal -->
+<ng-template #template>
+    <div class="modal-body text-success fw-bold text-center bg-light">
+        
+        <p>Proceed to Login?</p>
+        <button type="button" class="btn btn-default" (click)="confirm()">Yes</button>
+        <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+    </div>
+</ng-template>

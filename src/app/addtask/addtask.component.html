@@ -1,0 +1,25 @@
+<div class="addTaskComponent">
+    <div class="row">
+        <div class="col-6 mx-auto border-danger mt-3 pt-5 pb-5">
+            <h2 class="text-center">Add New Task</h2>
+            <form #formref='ngForm' (ngSubmit)='addTask(formref)'>
+                <!-- Task Name -->
+                <div class="mb-3">
+                    <label for="taskname">Name Of Task</label>
+                    <input type="text" name="taskname" id="taskname" class="form-control" ngModel>
+                </div>
+                <!-- date of task -->
+                <div class="mb-3">
+                    <label for="taskDate">Date of Task</label>
+                    <input type="date" name="taskDate" id="taskDate" class="form-control" ngModel>
+                </div>
+                <!-- Add Description -->
+                <label for="taskDesc">About Your task</label>
+                <textarea name="taskDesc" id="taskDesc" class="form-control" ngModel></textarea>
+                <!-- AddTask -->
+                <button type="submit" class="btn btn-primary d-block mx-auto mt-3">Add Task</button>
+            </form>
+
+        </div>
+    </div>
+</div>

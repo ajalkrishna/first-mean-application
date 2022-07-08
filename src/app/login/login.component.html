@@ -1,0 +1,25 @@
+<div>
+    <h2 class="text-center">Login Page</h2>
+    <p class="fw-bold text-center text-danger" *ngIf="loginErrorObj.error">
+        {{loginErrorObj.errorMsg}}
+    </p>
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <form  #formref='ngForm' (ngSubmit)='onLogin(formref)'>
+                <!-- username -->
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" ngModel>
+                </div>
+                <!-- password -->
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" ngModel>
+                </div>
+                <!-- login -->
+                <button type="submit" class="btn btn-primary d-block mx-auto">Login</button>
+            </form>
+
+        </div>
+    </div>
+</div>

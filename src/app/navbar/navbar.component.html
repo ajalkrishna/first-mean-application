@@ -1,0 +1,23 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">User Application</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" routerLink='home' routerLinkActive='active'>Home</a>
+                <a class="nav-link" routerLink='signup' routerLinkActive='active'>SignUp</a>
+  
+                <a class="nav-link" routerLink='login' routerLinkActive='active' *ngIf='this.userService.getUserBehaveSub().getValue()==null'>
+                    Login
+                </a>
+                <a class="nav-link" routerLink='login' routerLinkActive='active' 
+                *ngIf='this.userService.getUserBehaveSub().getValue()!==null'
+                (click)='this.userService.logoutUser()'>
+                Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
